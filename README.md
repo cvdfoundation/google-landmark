@@ -30,7 +30,7 @@ For reference, the previous version of the Google Landmarks dataset is available
 -   `train_attribution.csv`: CSV with id,url,author,license,title fields. `id`
     is a 16-character string, and the other fields are strings of variable
     length. Available at:
-    `https://s3.amazonaws.com/google-landmark/metadata/train_attribution.csv`.
+    [`https://s3.amazonaws.com/google-landmark/metadata/train_attribution.csv`](https://s3.amazonaws.com/google-landmark/metadata/train_attribution.csv).
 
 ### Downloading the data
 
@@ -39,7 +39,7 @@ files are located in the `train/` directory, and are named `images_000.tar`,
 `images_001.tar`, ..., `images_499.tar`. To download them, access the following
 link:
 
-`https://s3.amazonaws.com/google-landmark/train/images_000.tar`
+[`https://s3.amazonaws.com/google-landmark/train/images_000.tar`](https://s3.amazonaws.com/google-landmark/train/images_000.tar)
 
 And similarly for the other files.
 
@@ -52,6 +52,6 @@ they are located in the `md5sum/train/` directory, with file names
 the md5sum file corresponding to the `images_000.tar` file can be found via the
 following link:
 
-`https://s3.amazonaws.com/google-landmark/md5sum/train/md5.images_000.txt`
+[`https://s3.amazonaws.com/google-landmark/md5sum/train/md5.images_000.txt`](https://s3.amazonaws.com/google-landmark/md5sum/train/md5.images_000.txt)
 
 And similarly for the other files.
