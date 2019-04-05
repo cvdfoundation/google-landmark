@@ -25,7 +25,7 @@ For reference, the previous version of the Google Landmarks dataset is available
 
 -   `train.csv`: CSV with id,url,landmark_id fields. `id` is a 16-character
     string, `url` is a string, `landmark_id` is an integer. Available at:
-    `https://s3.amazonaws.com/google-landmark/metadata/train.csv`.
+    [`https://s3.amazonaws.com/google-landmark/metadata/train.csv`](https://s3.amazonaws.com/google-landmark/metadata/train.csv).
 
 -   `train_attribution.csv`: CSV with id,url,author,license,title fields. `id`
     is a 16-character string, and the other fields are strings of variable
