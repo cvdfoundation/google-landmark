@@ -64,3 +64,18 @@ directory `${a}`/`${b}`/`${c}`/`${id}`.jpg, where `${a}`, `${b}` and `${c}` are
 the first three letters of the image id, and `${id}` is the image id found in
 train.csv. For example, an image with the id `0123456789abcdef` would be stored
 in `0/1/2/0123456789abcdef.jpg`.
+
+### `train` image licenses
+
+All images in the `train` set have CC-BY licenses without the NonDerivs (ND)
+restriction. To verify the license for a particular image, please refer to
+`train_attribution.csv`.
+
+## Dataset licenses
+
+The annotations are licensed by Google under CC BY 4.0 license. The images
+listed in this dataset are publicly available on the web, and may have different
+licenses. Google does not own their copyright. Note: while we tried to identify
+images that are licensed under a Creative Commons Attribution license, we make
+no representations or warranties regarding the license status of each image and
+you should verify the license for each image yourself.
