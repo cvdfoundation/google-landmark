@@ -34,10 +34,10 @@ For reference, the previous version of the Google Landmarks dataset is available
 
 ### Downloading the data
 
-The `train` set is split into 500 TAR files containing JPG-encoded images. The
-files are located in the `train/` directory, and are named `images_000.tar`,
-`images_001.tar`, ..., `images_499.tar`. To download them, access the following
-link:
+The `train` set is split into 500 TAR files containing JPG-encoded images, each
+of size ~1GB. The files are located in the `train/` directory, and are named
+`images_000.tar`, `images_001.tar`, ..., `images_499.tar`. To download them,
+access the following link:
 
 [`https://s3.amazonaws.com/google-landmark/train/images_000.tar`](https://s3.amazonaws.com/google-landmark/train/images_000.tar)
 
