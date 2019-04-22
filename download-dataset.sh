@@ -13,10 +13,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-N=499
+# Number of processes to run in parallel.
 NUM_PROC=6
 
-download_and_compare() {
+# Inclusive upper limit for file downloads.
+# Default of N=499 will download all files, i.e. images_000.tar...images_499.tar
+N=499
+
+download_check_and_extract() {
   local i=$1
   images_file_name=images_$1.tar
   images_md5_file_name=md5.images_$1.txt
@@ -43,6 +47,6 @@ download_and_compare() {
 for i in $(seq 0 $NUM_PROC $N); do
   upper=$(expr $i + $NUM_PROC)
   limit=$(($upper>$N?$N:$upper))
-  for j in $(seq -f "%03g" $i $limit); do download_and_compare "$j" & done
+  for j in $(seq -f "%03g" $i $limit); do download_check_and_extract "$j" & done
   wait
 done
