@@ -45,7 +45,7 @@ download_check_and_extract() {
 }
 
 for i in $(seq 0 $NUM_PROC $N); do
-  upper=$(expr $i + $NUM_PROC)
+  upper=$(expr $i + $NUM_PROC - 1)
   limit=$(($upper>$N?$N:$upper))
   for j in $(seq -f "%03g" $i $limit); do download_check_and_extract "$j" & done
   wait
