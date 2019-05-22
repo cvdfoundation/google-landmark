@@ -18,6 +18,16 @@ For reference, the previous version of the Google Landmarks dataset is available
 
 ## Download `train` set
 
+### Using the provided script
+Running `download-dataset.sh` will automatically download, extract, and verify the images in the current directory.
+
+```bash
+chmod +x download-dataset.sh
+./download-dataset.sh
+```
+
+Note: This script downloads files in parallel. To adjust the number of parallel downloads, modify `NUM_PROC` in the script.
+
 ### Download the labels and metadata
 
 -   `train.csv`: CSV with id,url,landmark_id fields. `id` is a 16-character
