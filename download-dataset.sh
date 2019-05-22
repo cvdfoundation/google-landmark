@@ -16,17 +16,23 @@
 # Number of processes to run in parallel.
 NUM_PROC=6
 
-# Inclusive upper limit for file downloads.
-# Default of N=499 will download all files, i.e. images_000.tar...images_499.tar
-N=499
+# Dataset split to download.
+# Options: train, test, index.
+SPLIT=$1
+
+# Inclusive upper limit for file downloads. Should be set according to split:
+# train --> 499.
+# test --> 19.
+# index --> 99.
+N=$2
 
 download_check_and_extract() {
   local i=$1
   images_file_name=images_$1.tar
   images_md5_file_name=md5.images_$1.txt
-  images_tar_url=https://s3.amazonaws.com/google-landmark/train/$images_file_name
-  images_md5_url=https://s3.amazonaws.com/google-landmark/md5sum/train/$images_md5_file_name
-  echo "Downloading $images_file_name..."
+  images_tar_url=https://s3.amazonaws.com/google-landmark/$SPLIT/$images_file_name
+  images_md5_url=https://s3.amazonaws.com/google-landmark/md5sum/$SPLIT/$images_md5_file_name
+  echo "Downloading $images_file_name and its md5sum..."
   curl -Os $images_tar_url > /dev/null
   curl -Os $images_md5_url > /dev/null
   if [[ "$OSTYPE" == "linux-gnu" ]]; then

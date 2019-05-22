@@ -4,7 +4,8 @@ This is the second version of the Google Landmarks dataset, which contains
 images annotated with labels representing human-made and natural landmarks. The
 dataset can be used for landmark recognition and retrieval experiments. This
 version of the dataset contains approximately 5 million images, split into 3
-sets of images: `train`, `index` and `test`.
+sets of images: `train`, `index` and `test`. The dataset is presented in our
+[Google AI blog post](https://ai.googleblog.com/2019/05/announcing-google-landmarks-v2-improved.html).
 
 This dataset is associated to two Kaggle challenges, on
 [landmark recognition](https://kaggle.com/c/landmark-recognition-2019) and
@@ -18,15 +19,7 @@ For reference, the previous version of the Google Landmarks dataset is available
 
 ## Download `train` set
 
-### Using the provided script
-Running `download-dataset.sh` will automatically download, extract, and verify the images in the current directory.
-
-```bash
-chmod +x download-dataset.sh
-./download-dataset.sh
-```
-
-Note: This script downloads files in parallel. To adjust the number of parallel downloads, modify `NUM_PROC` in the script.
+There are 4,132,914 images in the `train` set.
 
 ### Download the labels and metadata
 
@@ -50,6 +43,19 @@ them, access the following link:
 
 And similarly for the other files.
 
+#### Using the provided script
+
+```bash
+mkdir train && cd train
+bash ../download-dataset.sh train 499
+```
+
+This will automatically download, verify and extract the images to the `train`
+directory.
+
+Note: This script downloads files in parallel. To adjust the number of parallel
+downloads, modify `NUM_PROC` in the script.
+
 ### `train` image licenses
 
 All images in the `train` set have CC-BY licenses without the NonDerivs (ND)
@@ -57,6 +63,8 @@ restriction. To verify the license for a particular image, please refer to
 `train_attribution.csv`.
 
 ## Download `index` set
+
+There are 761,757 images in the `index` set.
 
 ### Download the list of images
 
@@ -75,11 +83,26 @@ them, access the following link:
 
 And similarly for the other files.
 
+#### Using the provided script
+
+```bash
+mkdir index && cd index
+bash ../download-dataset.sh index 99
+```
+
+This will automatically download, verify and extract the images to the `index`
+directory.
+
+Note: This script downloads files in parallel. To adjust the number of parallel
+downloads, modify `NUM_PROC` in the script.
+
 ### `index` image licenses
 
 All images in the `index` set have CC-0 or Public Domain licenses.
 
 ## Download `test` set
+
+There are 117,577 images in the `test` set.
 
 ### Download the list of images
 
@@ -98,6 +121,19 @@ them, access the following link:
 
 And similarly for the other files.
 
+#### Using the provided script
+
+```bash
+mkdir test && cd test
+bash ../download-dataset.sh test 19
+```
+
+This will automatically download, verify and extract the images to the `test`
+directory.
+
+Note: This script downloads files in parallel. To adjust the number of parallel
+downloads, modify `NUM_PROC` in the script.
+
 ### `test` image licenses
 
 All images in the `test` set have CC-0 or Public Domain licenses.
@@ -114,6 +150,9 @@ For example, the md5sum file corresponding to the `images_000.tar` file in the
 [`https://s3.amazonaws.com/google-landmark/md5sum/index/md5.images_000.txt`](https://s3.amazonaws.com/google-landmark/md5sum/index/md5.images_000.txt)
 
 And similarly for the other files.
+
+If you use the provided `download-dataset.sh` script, the integrity of the files
+is already checked right after download.
 
 ## Extracting the data
 
