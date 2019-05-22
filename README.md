@@ -13,9 +13,6 @@ will be discussed as part of a
 [CVPR'19 workshop](https://landmarksworkshop.github.io/CVPRW2019/). Please visit
 the Kaggle challenge webpages for more detail on the data.
 
-Currently, only the `train` dataset is available. The `index` and `test` sets
-will be released with the second stage of the Kaggle challenges.
-
 For reference, the previous version of the Google Landmarks dataset is available
 [here](https://www.kaggle.com/google/google-landmarks-dataset).
 
@@ -43,33 +40,81 @@ them, access the following link:
 
 And similarly for the other files.
 
-### Checking the download
-
-We also make available md5sum files for checking the integrity of the downloaded
-files. Each md5sum file corresponds to one of the TAR files mentioned above;
-they are located in the `md5sum/train/` directory, with file names
-`md5.images_000.txt`, `md5.images_001.txt`, `md5.images_499.txt`. For example,
-the md5sum file corresponding to the `images_000.tar` file can be found via the
-following link:
-
-[`https://s3.amazonaws.com/google-landmark/md5sum/train/md5.images_000.txt`](https://s3.amazonaws.com/google-landmark/md5sum/train/md5.images_000.txt)
-
-And similarly for the other files.
-
-### Extracting the data
-
-We recommend that all 500 TAR files be extracted into the same directory. The
-directory structure of the image data is as follows: Each image is stored in a
-directory `${a}`/`${b}`/`${c}`/`${id}`.jpg, where `${a}`, `${b}` and `${c}` are
-the first three letters of the image id, and `${id}` is the image id found in
-train.csv. For example, an image with the id `0123456789abcdef` would be stored
-in `0/1/2/0123456789abcdef.jpg`.
-
 ### `train` image licenses
 
 All images in the `train` set have CC-BY licenses without the NonDerivs (ND)
 restriction. To verify the license for a particular image, please refer to
 `train_attribution.csv`.
+
+## Download `index` set
+
+### Download the list of images
+
+-   `index.csv`: single-column CSV with id field. `id` is a 16-character string.
+    Available at:
+    [`https://s3.amazonaws.com/google-landmark/metadata/index.csv`](https://s3.amazonaws.com/google-landmark/metadata/index.csv).
+
+### Downloading the data
+
+The `index` set is split into 100 TAR files (each of size ~850MB) containing
+JPG-encoded images. The files are located in the `index/` directory, and are
+named `images_000.tar`, `images_001.tar`, ..., `images_099.tar`. To download
+them, access the following link:
+
+[`https://s3.amazonaws.com/google-landmark/index/images_000.tar`](https://s3.amazonaws.com/google-landmark/index/images_000.tar)
+
+And similarly for the other files.
+
+### `index` image licenses
+
+All images in the `index` set have CC-0 or Public Domain licenses.
+
+## Download `test` set
+
+### Download the list of images
+
+-   `test.csv`: single-column CSV with id field. `id` is a 16-character string.
+    Available at:
+    [`https://s3.amazonaws.com/google-landmark/metadata/test.csv`](https://s3.amazonaws.com/google-landmark/metadata/test.csv).
+
+### Downloading the data
+
+The `test` set is split into 20 TAR files (each of size ~500MB) containing
+JPG-encoded images. The files are located in the `test/` directory, and are
+named `images_000.tar`, `images_001.tar`, ..., `images_019.tar`. To download
+them, access the following link:
+
+[`https://s3.amazonaws.com/google-landmark/test/images_000.tar`](https://s3.amazonaws.com/google-landmark/test/images_000.tar)
+
+And similarly for the other files.
+
+### `test` image licenses
+
+All images in the `test` set have CC-0 or Public Domain licenses.
+
+## Checking the download
+
+We also make available md5sum files for checking the integrity of the downloaded
+files. Each md5sum file corresponds to one of the TAR files mentioned above;
+they are located in the `md5sum/index/`, `md5sum/test/` and `md5sum/train/`
+directories, with file names `md5.images_000.txt`, `md5.images_001.txt`, etc.
+For example, the md5sum file corresponding to the `images_000.tar` file in the
+`index` set can be found via the following link:
+
+[`https://s3.amazonaws.com/google-landmark/md5sum/index/md5.images_000.txt`](https://s3.amazonaws.com/google-landmark/md5sum/index/md5.images_000.txt)
+
+And similarly for the other files.
+
+## Extracting the data
+
+We recommend that the set of TAR files corresponding to each dataset split be
+extracted into a directory per split; ie, the `index` TARs extracted into an
+`index` directory; `train` TARs extracted into a `train` directory; etc. The
+directory structure of the image data is as follows: Each image is stored in a
+directory `${a}`/`${b}`/`${c}`/`${id}`.jpg, where `${a}`, `${b}` and `${c}` are
+the first three letters of the image id, and `${id}` is the image id found in
+train.csv. For example, an image with the id `0123456789abcdef` would be stored
+in `0/1/2/0123456789abcdef.jpg`.
 
 ## Dataset licenses
 
