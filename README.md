@@ -14,7 +14,8 @@ were discussed as part of a
 [CVPR'19 workshop](https://landmarksworkshop.github.io/CVPRW2019/). Please visit
 the Kaggle challenge webpages for more detail on the data.
 
-For reference, the previous version of the Google Landmarks dataset is available
+For reference, the previous version of the Google Landmarks dataset (referred to
+as Google Landmarks dataset v1) is available
 [here](https://www.kaggle.com/google/google-landmarks-dataset).
 
 ## Download `train` set
