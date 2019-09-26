@@ -4,10 +4,12 @@ This is the second version of the Google Landmarks dataset, which contains
 images annotated with labels representing human-made and natural landmarks. The
 dataset can be used for landmark recognition and retrieval experiments. This
 version of the dataset contains approximately 5 million images, split into 3
-sets of images: `train`, `index` and `test`. The dataset is presented in our
+sets of images: `train`, `index` and `test`. The dataset was presented in our
 [Google AI blog post](https://ai.googleblog.com/2019/05/announcing-google-landmarks-v2-improved.html).
+In this repository, we present download links for all dataset files and relevant
+code for metric computation.
 
-This dataset is associated to two Kaggle challenges, on
+This dataset was associated to two Kaggle challenges, on
 [landmark recognition](https://kaggle.com/c/landmark-recognition-2019) and
 [landmark retrieval](https://www.kaggle.com/c/landmark-retrieval-2019). Results
 were discussed as part of a
@@ -32,6 +34,11 @@ There are 4,132,914 images in the `train` set.
     is a 16-character string, and the other fields are strings of variable
     length. Available at:
     [`https://s3.amazonaws.com/google-landmark/metadata/train_attribution.csv`](https://s3.amazonaws.com/google-landmark/metadata/train_attribution.csv).
+
+-   `recognition_label_to_category.csv`: CSV with landmark_id,category fields:
+    `landmark_id` is an integer, `category` is a Wikimedia URL referring to the
+    class definition. Available at:
+    [`https://s3.amazonaws.com/google-landmark/ground_truth/recognition_label_to_category.csv`](https://s3.amazonaws.com/google-landmark/ground_truth/recognition_label_to_category.csv).
 
 ### Downloading the data
 
@@ -67,11 +74,23 @@ restriction. To verify the license for a particular image, please refer to
 
 There are 761,757 images in the `index` set.
 
-### Download the list of images
+### Download the list of images and metadata
+
+IMPORTANT: Note that the integer landmark id's mentioned here are different from
+the ones in the train set above.
 
 -   `index.csv`: single-column CSV with id field. `id` is a 16-character string.
     Available at:
     [`https://s3.amazonaws.com/google-landmark/metadata/index.csv`](https://s3.amazonaws.com/google-landmark/metadata/index.csv).
+
+-   `retrieval_images_to_label.csv`: CSV with id,landmark_id fields: `id` is a
+    16-character string, `landmark_id` is an integer. Available at:
+    [`https://s3.amazonaws.com/google-landmark/ground_truth/retrieval_images_to_label.csv`](https://s3.amazonaws.com/google-landmark/ground_truth/retrieval_images_to_label.csv).
+
+-   `retrieval_label_to_category.csv`: CSV with landmark_id,category fields:
+    `landmark_id` is an integer, `category` is a Wikimedia URL referring to the
+    class definition. Available at:
+    [`https://s3.amazonaws.com/google-landmark/ground_truth/retrieval_label_to_category.csv`](https://s3.amazonaws.com/google-landmark/ground_truth/retrieval_label_to_category.csv).
 
 ### Downloading the data
 
@@ -105,11 +124,23 @@ All images in the `index` set have CC-0 or Public Domain licenses.
 
 There are 117,577 images in the `test` set.
 
-### Download the list of images
+### Download the list of images and ground-truth
 
 -   `test.csv`: single-column CSV with id field. `id` is a 16-character string.
     Available at:
     [`https://s3.amazonaws.com/google-landmark/metadata/test.csv`](https://s3.amazonaws.com/google-landmark/metadata/test.csv).
+
+-   `recognition_solution.csv`: CSV with three columns: `id` (16-character
+    string), `landmarks` (space-separated list of integer landmark IDs, empty if
+    no landmark from the dataset is depicted), `Usage` (either "Public" or
+    "Private", referring to which subset the image belongs to). Available at:
+    [`https://s3.amazonaws.com/google-landmark/ground_truth/recognition_solution.csv`](https://s3.amazonaws.com/google-landmark/ground_truth/recognition_solution.csv).
+
+-   `retrieval_solution.csv`: CSV with three columns: `id` (16-character
+    string), `images` (space-separated list of string index image IDs, or None
+    if this image is ignored), `Usage` (either "Public" or "Private", referring
+    to which subset the image belongs to). Available at:
+    [`https://s3.amazonaws.com/google-landmark/ground_truth/retrieval_solution.csv`](https://s3.amazonaws.com/google-landmark/ground_truth/retrieval_solution.csv).
 
 ### Downloading the data
 
@@ -166,6 +197,14 @@ the first three letters of the image id, and `${id}` is the image id found in
 train.csv. For example, an image with the id `0123456789abcdef` would be stored
 in `0/1/2/0123456789abcdef.jpg`.
 
+## Metric computation code
+
+The metric computation scripts have been made available, via the
+[DELF github repository](https://github.com/tensorflow/models/tree/master/research/delf/delf/python/google_landmarks_dataset),
+see the python scripts `compute_recognition_metrics.py` and
+`compute_retrieval_metrics.py`. These scripts accept as input the ground-truth
+files, along with predictions in the format submitted to Kaggle.
+
 ## Dataset licenses
 
 The annotations are licensed by Google under CC BY 4.0 license. The images
@@ -174,3 +213,58 @@ licenses. Google does not own their copyright. Note: while we tried to identify
 images that are licensed under a Creative Commons Attribution license, we make
 no representations or warranties regarding the license status of each image and
 you should verify the license for each image yourself.
+
+## Release history
+
+### Sept 2019 (version 2.1)
+
+Ground-truth and labelmaps released. Note that the ground-truth has been
+substantially updated since the end of the 2019 Kaggle challenges; it is not the
+one that was used for scoring in the challenge.
+
+We have re-computed metrics for the top 10 teams in the 2019 challenges (see the
+Kaggle challenge webpages for precise definitions of the metrics):
+
+#### Recognition metrics
+
+Team                     | Private GAP (%) | Public GAP (%)
+:----------------------: | :-------------: | :------------:
+JL                       | 66.53           | 61.86
+GLRunner                 | 53.08           | 52.07
+smlyaka                  | 69.39           | 65.85
+Chundi Liu               | 60.86           | 56.77
+Cookpad                  | 33.66           | 31.12
+bestfitting              | 54.53           | 52.46
+Himanshu Rai             | 60.32           | 56.28
+Eduardo                  | 46.88           | 44.07
+ods.ai                   | 24.02           | 22.28
+ZFTurbo & Weimin & David | 38.99           | 39.83
+
+#### Retrieval metrics
+
+Team                           | Private mAP@100 (%) | Public mAP@100 (%)
+:----------------------------: | :-----------------: | :----------------:
+smlyaka                        | 37.14               | 35.63
+imagesearch                    | 34.38               | 32.04
+Layer 6 AI                     | 32.10               | 29.92
+bestfitting                    | 32.12               | 29.09
+ods.ai                         | 29.82               | 27.82
+learner                        | 28.98               | 27.33
+CVSSP                          | 28.07               | 26.59
+Clova Vision, NAVER/LINE Corp. | 27.77               | 25.85
+VRG Prague                     | 25.48               | 23.71
+JL                             | 24.98               | 22.73
+
+### May 2019 (version 2.0)
+
+Included data for `test` and `index` sets.
+
+### Apr 2019 (version 2.0)
+
+Initial version, including only `train` set.
+
+## Contact
+
+For any questions/suggestions/comments/corrections, please open an issue in this
+github repository. In particular, we plan to maintain and release new versions
+of the ground-truth as corrections are found.
