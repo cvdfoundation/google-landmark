@@ -10,7 +10,7 @@ sets of images: `train`, `index` and `test`. The dataset is presented in our
 This dataset is associated to two Kaggle challenges, on
 [landmark recognition](https://kaggle.com/c/landmark-recognition-2019) and
 [landmark retrieval](https://www.kaggle.com/c/landmark-retrieval-2019). Results
-will be discussed as part of a
+were discussed as part of a
 [CVPR'19 workshop](https://landmarksworkshop.github.io/CVPRW2019/). Please visit
 the Kaggle challenge webpages for more detail on the data.
 
