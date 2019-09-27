@@ -1,10 +1,11 @@
 # Google Landmarks Dataset v2
 
-This is the second version of the Google Landmarks dataset, which contains
-images annotated with labels representing human-made and natural landmarks. The
-dataset can be used for landmark recognition and retrieval experiments. This
-version of the dataset contains approximately 5 million images, split into 3
-sets of images: `train`, `index` and `test`. The dataset was presented in our
+This is the second version of the Google Landmarks dataset (GLD-v2), which
+contains images annotated with labels representing human-made and natural
+landmarks. The dataset can be used for landmark recognition and retrieval
+experiments. This version of the dataset contains approximately 5 million
+images, split into 3 sets of images: `train`, `index` and `test`. The dataset
+was presented in our
 [Google AI blog post](https://ai.googleblog.com/2019/05/announcing-google-landmarks-v2-improved.html).
 In this repository, we present download links for all dataset files and relevant
 code for metric computation.
@@ -13,12 +14,21 @@ This dataset was associated to two Kaggle challenges, on
 [landmark recognition](https://kaggle.com/c/landmark-recognition-2019) and
 [landmark retrieval](https://www.kaggle.com/c/landmark-retrieval-2019). Results
 were discussed as part of a
-[CVPR'19 workshop](https://landmarksworkshop.github.io/CVPRW2019/). Please visit
-the Kaggle challenge webpages for more detail on the data.
+[CVPR'19 workshop](https://landmarksworkshop.github.io/CVPRW2019/). In this
+repository, we also provide scores for the top 10 teams in the challenges, based
+on the latest ground-truth version. Please visit the challenge and workshop
+webpages for more details on the data, tasks and technical solutions from top
+teams.
 
 For reference, the previous version of the Google Landmarks dataset (referred to
-as Google Landmarks dataset v1) is available
+as Google Landmarks dataset v1, GLD-v1) is available
 [here](https://www.kaggle.com/google/google-landmarks-dataset).
+
+## Current version
+
+The current dataset version is **2.1**. See the
+[release history](#release-history) for details, including re-scored challenge
+submissions based on the latest ground-truth version.
 
 ## Download `train` set
 
@@ -35,10 +45,10 @@ There are 4,132,914 images in the `train` set.
     length. Available at:
     [`https://s3.amazonaws.com/google-landmark/metadata/train_attribution.csv`](https://s3.amazonaws.com/google-landmark/metadata/train_attribution.csv).
 
--   `recognition_label_to_category.csv`: CSV with landmark_id,category fields:
+-   `train_label_to_category.csv`: CSV with landmark_id,category fields:
     `landmark_id` is an integer, `category` is a Wikimedia URL referring to the
     class definition. Available at:
-    [`https://s3.amazonaws.com/google-landmark/ground_truth/recognition_label_to_category.csv`](https://s3.amazonaws.com/google-landmark/ground_truth/recognition_label_to_category.csv).
+    [`https://s3.amazonaws.com/google-landmark/metadata/train_label_to_category.csv`](https://s3.amazonaws.com/google-landmark/metadata/train_label_to_category.csv).
 
 ### Downloading the data
 
@@ -83,14 +93,14 @@ the ones in the train set above.
     Available at:
     [`https://s3.amazonaws.com/google-landmark/metadata/index.csv`](https://s3.amazonaws.com/google-landmark/metadata/index.csv).
 
--   `retrieval_images_to_label.csv`: CSV with id,landmark_id fields: `id` is a
+-   `index_image_to_landmark.csv`: CSV with id,landmark_id fields: `id` is a
     16-character string, `landmark_id` is an integer. Available at:
-    [`https://s3.amazonaws.com/google-landmark/ground_truth/retrieval_images_to_label.csv`](https://s3.amazonaws.com/google-landmark/ground_truth/retrieval_images_to_label.csv).
+    [`https://s3.amazonaws.com/google-landmark/metadata/index_image_to_landmark.csv`](https://s3.amazonaws.com/google-landmark/metadata/index_image_to_landmark.csv).
 
--   `retrieval_label_to_category.csv`: CSV with landmark_id,category fields:
+-   `index_label_to_category.csv`: CSV with landmark_id,category fields:
     `landmark_id` is an integer, `category` is a Wikimedia URL referring to the
     class definition. Available at:
-    [`https://s3.amazonaws.com/google-landmark/ground_truth/retrieval_label_to_category.csv`](https://s3.amazonaws.com/google-landmark/ground_truth/retrieval_label_to_category.csv).
+    [`https://s3.amazonaws.com/google-landmark/metadata/index_label_to_category.csv`](https://s3.amazonaws.com/google-landmark/metadata/index_label_to_category.csv).
 
 ### Downloading the data
 
@@ -130,17 +140,17 @@ There are 117,577 images in the `test` set.
     Available at:
     [`https://s3.amazonaws.com/google-landmark/metadata/test.csv`](https://s3.amazonaws.com/google-landmark/metadata/test.csv).
 
--   `recognition_solution.csv`: CSV with three columns: `id` (16-character
+-   `recognition_solution_v2.1.csv`: CSV with three columns: `id` (16-character
     string), `landmarks` (space-separated list of integer landmark IDs, empty if
     no landmark from the dataset is depicted), `Usage` (either "Public" or
     "Private", referring to which subset the image belongs to). Available at:
-    [`https://s3.amazonaws.com/google-landmark/ground_truth/recognition_solution.csv`](https://s3.amazonaws.com/google-landmark/ground_truth/recognition_solution.csv).
+    [`https://s3.amazonaws.com/google-landmark/ground_truth/recognition_solution_v2.1.csv`](https://s3.amazonaws.com/google-landmark/ground_truth/recognition_solution_v2.1.csv).
 
--   `retrieval_solution.csv`: CSV with three columns: `id` (16-character
+-   `retrieval_solution_v2.1.csv`: CSV with three columns: `id` (16-character
     string), `images` (space-separated list of string index image IDs, or None
     if this image is ignored), `Usage` (either "Public" or "Private", referring
     to which subset the image belongs to). Available at:
-    [`https://s3.amazonaws.com/google-landmark/ground_truth/retrieval_solution.csv`](https://s3.amazonaws.com/google-landmark/ground_truth/retrieval_solution.csv).
+    [`https://s3.amazonaws.com/google-landmark/ground_truth/retrieval_solution_v2.1.csv`](https://s3.amazonaws.com/google-landmark/ground_truth/retrieval_solution_v2.1.csv).
 
 ### Downloading the data
 
@@ -231,7 +241,7 @@ Team                     | Private GAP (%) | Public GAP (%)
 :----------------------: | :-------------: | :------------:
 JL                       | 66.53           | 61.86
 GLRunner                 | 53.08           | 52.07
-smlyaka                  | 69.39           | 65.85
+smlyaka                  | **69.39**       | **65.85**
 Chundi Liu               | 60.86           | 56.77
 Cookpad                  | 33.66           | 31.12
 bestfitting              | 54.53           | 52.46
@@ -244,7 +254,7 @@ ZFTurbo & Weimin & David | 38.99           | 39.83
 
 Team                           | Private mAP@100 (%) | Public mAP@100 (%)
 :----------------------------: | :-----------------: | :----------------:
-smlyaka                        | 37.14               | 35.63
+smlyaka                        | **37.14**           | **35.63**
 imagesearch                    | 34.38               | 32.04
 Layer 6 AI                     | 32.10               | 29.92
 bestfitting                    | 32.12               | 29.09
