@@ -24,8 +24,6 @@ For reference, the previous version of the Google Landmarks dataset (referred to
 as Google Landmarks dataset v1, GLD-v1) is available
 [here](https://www.kaggle.com/google/google-landmarks-dataset).
 
-[TOC]
-
 ## Current version
 
 The current dataset version is **2.1**. See the
