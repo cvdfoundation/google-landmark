@@ -24,6 +24,8 @@ For reference, the previous version of the Google Landmarks dataset (referred to
 as Google Landmarks dataset v1, GLD-v1) is available
 [here](https://www.kaggle.com/google/google-landmarks-dataset).
 
+[TOC]
+
 ## Current version
 
 The current dataset version is **2.1**. See the
@@ -86,8 +88,8 @@ There are 761,757 images in the `index` set.
 
 ### Download the list of images and metadata
 
-IMPORTANT: Note that the integer landmark id's mentioned here are different from
-the ones in the train set above.
+**IMPORTANT**: Note that the integer landmark id's mentioned here are different
+from the ones in the train set above.
 
 -   `index.csv`: single-column CSV with id field. `id` is a 16-character string.
     Available at:
@@ -141,8 +143,8 @@ There are 117,577 images in the `test` set.
     [`https://s3.amazonaws.com/google-landmark/metadata/test.csv`](https://s3.amazonaws.com/google-landmark/metadata/test.csv).
 
 -   `recognition_solution_v2.1.csv`: CSV with three columns: `id` (16-character
-    string), `landmarks` (space-separated list of integer landmark IDs, empty if
-    no landmark from the dataset is depicted), `Usage` (either "Public" or
+    string), `landmarks` (space-separated list of integer landmark IDs, or empty
+    if no landmark from the dataset is depicted), `Usage` (either "Public" or
     "Private", referring to which subset the image belongs to). Available at:
     [`https://s3.amazonaws.com/google-landmark/ground_truth/recognition_solution_v2.1.csv`](https://s3.amazonaws.com/google-landmark/ground_truth/recognition_solution_v2.1.csv).
 
