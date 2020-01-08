@@ -278,3 +278,63 @@ Initial version, including only `train` set.
 For any questions/suggestions/comments/corrections, please open an issue in this
 github repository. In particular, we plan to maintain and release new versions
 of the ground-truth as corrections are found.
+
+## Dataset Metadata
+The following table is necessary for this dataset to be indexed by search
+engines such as <a href="https://g.co/datasetsearch">Google Dataset Search</a>.
+<div itemscope itemtype="http://schema.org/Dataset">
+<table>
+  <tr>
+    <th>property</th>
+    <th>value</th>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td><code itemprop="name">Google Landmarks Dataset v2</code></td>
+  </tr>
+  <tr>
+    <td>url</td>
+    <td><code itemprop="url">https://github.com/cvdfoundation/google-landmark</code></td>
+  </tr>
+  <tr>
+    <td>description</td>
+    <td itemprop="description">This is the second version of the Google Landmarks dataset (GLD-v2), which contains images annotated with labels representing human-made and natural landmarks. The dataset can be used for landmark recognition and retrieval experiments. This version of the dataset contains approximately 5 million images, split into 3 sets of images: train, index and test. The dataset was presented in our Google AI blog post. In this repository, we present download links for all dataset files and relevant code for metric computation.
+
+This dataset was associated to two Kaggle challenges, on landmark recognition and landmark retrieval. Results were discussed as part of a CVPR'19 workshop. In this repository, we also provide scores for the top 10 teams in the challenges, based on the latest ground-truth version. Please visit the challenge and workshop webpages for more details on the data, tasks and technical solutions from top teams.</td>
+  </tr>
+  <tr>
+    <td>provider</td>
+    <td>
+      <div itemscope itemtype="http://schema.org/Organization" itemprop="provider">
+        <table>
+          <tr>
+            <th>property</th>
+            <th>value</th>
+          </tr>
+          <tr>
+            <td>name</td>
+            <td><code itemprop="name">Google</code></td>
+          </tr>
+          <tr>
+            <td>sameAs</td>
+            <td><code itemprop="sameAs">https://en.wikipedia.org/wiki/Google</code></td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>license</td>
+    <td>
+      <div itemscope itemtype="http://schema.org/CreativeWork" itemprop="license">
+          <code  itemprop="name">
+    The annotations are licensed by Google under CC BY 4.0 license. The images listed in this dataset are publicly available on the web, and may have different licenses. Google does not own their copyright. Note: while we tried to identify images that are licensed under a Creative Commons Attribution license, we make no representations or warranties regarding the license status of each image and you should verify the license for each image yourself. </code>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>citation</td>
+    <td><code itemprop="citation">https://identifiers.org/arxiv:1901.08971</code></td>
+  </tr>
+</table>
+</div>
