@@ -280,6 +280,7 @@ github repository. In particular, we plan to maintain and release new versions
 of the ground-truth as corrections are found.
 
 ## Dataset Metadata
+
 The following table is necessary for this dataset to be indexed by search
 engines such as <a href="https://g.co/datasetsearch">Google Dataset Search</a>.
 <div itemscope itemtype="http://schema.org/Dataset">
@@ -334,7 +335,7 @@ This dataset was associated to two Kaggle challenges, on landmark recognition an
   </tr>
   <tr>
     <td>citation</td>
-    <td><code itemprop="citation">https://identifiers.org/arxiv:1901.08971</code></td>
+    <td><code itemprop="citation">TODO</code></td>
   </tr>
 </table>
 </div>
