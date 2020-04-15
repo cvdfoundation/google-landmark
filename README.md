@@ -5,7 +5,7 @@ contains images annotated with labels representing human-made and natural
 landmarks. The dataset can be used for landmark recognition and retrieval
 experiments. This version of the dataset contains approximately 5 million
 images, split into 3 sets of images: `train`, `index` and `test`. The dataset
-was presented in our
+was presented in our [CVPR'20 paper](https://arxiv.org/abs/2004.01804) and
 [Google AI blog post](https://ai.googleblog.com/2019/05/announcing-google-landmarks-v2-improved.html).
 In this repository, we present download links for all dataset files and relevant
 code for metric computation.
@@ -23,6 +23,14 @@ teams.
 For reference, the previous version of the Google Landmarks dataset (referred to
 as Google Landmarks dataset v1, GLD-v1) is available
 [here](https://www.kaggle.com/google/google-landmarks-dataset).
+
+If you make use of this dataset, please consider citing the following paper:
+
+```
+"Google Landmarks Dataset v2 - A Large-Scale Benchmark for Instance-Level Recognition and Retrieval"
+T. Weyand*, A. Araujo*, B. Cao, J. Sim
+Proc. CVPR'20
+```
 
 ## Current version
 
@@ -299,7 +307,7 @@ engines such as <a href="https://g.co/datasetsearch">Google Dataset Search</a>.
   </tr>
   <tr>
     <td>description</td>
-    <td itemprop="description">This is the second version of the Google Landmarks dataset (GLD-v2), which contains images annotated with labels representing human-made and natural landmarks. The dataset can be used for landmark recognition and retrieval experiments. This version of the dataset contains approximately 5 million images, split into 3 sets of images: train, index and test. The dataset was presented in our Google AI blog post. In this repository, we present download links for all dataset files and relevant code for metric computation.
+    <td itemprop="description">This is the second version of the Google Landmarks dataset (GLD-v2), which contains images annotated with labels representing human-made and natural landmarks. The dataset can be used for landmark recognition and retrieval experiments. This version of the dataset contains approximately 5 million images, split into 3 sets of images: train, index and test. The dataset was presented in our CVPR'20 paper. In this repository, we present download links for all dataset files and relevant code for metric computation.
 
 This dataset was associated to two Kaggle challenges, on landmark recognition and landmark retrieval. Results were discussed as part of a CVPR'19 workshop. In this repository, we also provide scores for the top 10 teams in the challenges, based on the latest ground-truth version. Please visit the challenge and workshop webpages for more details on the data, tasks and technical solutions from top teams.</td>
   </tr>
@@ -335,7 +343,18 @@ This dataset was associated to two Kaggle challenges, on landmark recognition an
   </tr>
   <tr>
     <td>citation</td>
-    <td><code itemprop="citation">TODO</code></td>
+    <td><code itemprop="citation">Weyand, T. and Araujo, A. and Cao, B. and Sim, J., "Google Landmarks Dataset v2 - A Large-Scale Benchmark for Instance-Level Recognition and Retrieval", Proc. CVPR 2020</code></td>
   </tr>
 </table>
 </div>
+
+## Paper reference
+
+```
+@inproceedings{weyand2020GLDv2,
+  author = {Weyand, T. and Araujo, A. and Cao, B. and Sim, J.},
+  title = {{Google Landmarks Dataset v2 - A Large-Scale Benchmark for Instance-Level Recognition and Retrieval}},
+  year = {2020},
+  booktitle = {Proc. CVPR},
+}
+```
