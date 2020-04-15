@@ -209,12 +209,15 @@ is already checked right after download.
 
 We recommend that the set of TAR files corresponding to each dataset split be
 extracted into a directory per split; ie, the `index` TARs extracted into an
-`index` directory; `train` TARs extracted into a `train` directory; etc. The
-directory structure of the image data is as follows: Each image is stored in a
-directory `${a}`/`${b}`/`${c}`/`${id}`.jpg, where `${a}`, `${b}` and `${c}` are
-the first three letters of the image id, and `${id}` is the image id found in
-train.csv. For example, an image with the id `0123456789abcdef` would be stored
-in `0/1/2/0123456789abcdef.jpg`.
+`index` directory; `train` TARs extracted into a `train` directory; `test` TARs
+extracted into a `test` directory. This is done automatically if you use the
+above download instructions/script.
+
+The directory structure of the image data is as follows: Each image is stored in
+a directory `${a}`/`${b}`/`${c}`/`${id}`.jpg, where `${a}`, `${b}` and `${c}`
+are the first three letters of the image id, and `${id}` is the image id found
+in the csv files. For example, an image with the id `0123456789abcdef` would be
+stored in `0/1/2/0123456789abcdef.jpg`.
 
 ## Metric computation code
 
@@ -285,8 +288,19 @@ Initial version, including only `train` set.
 ## Contact
 
 For any questions/suggestions/comments/corrections, please open an issue in this
-github repository. In particular, we plan to maintain and release new versions
-of the ground-truth as corrections are found.
+github repository, and tag @andrefaraujo. In particular, we plan to maintain and
+release new versions of the ground-truth as corrections are found.
+
+## Paper reference
+
+```
+@inproceedings{weyand2020GLDv2,
+  author = {Weyand, T. and Araujo, A. and Cao, B. and Sim, J.},
+  title = {{Google Landmarks Dataset v2 - A Large-Scale Benchmark for Instance-Level Recognition and Retrieval}},
+  year = {2020},
+  booktitle = {Proc. CVPR},
+}
+```
 
 ## Dataset Metadata
 
@@ -348,14 +362,3 @@ This dataset was associated to two Kaggle challenges, on landmark recognition an
   </tr>
 </table>
 </div>
-
-## Paper reference
-
-```
-@inproceedings{weyand2020GLDv2,
-  author = {Weyand, T. and Araujo, A. and Cao, B. and Sim, J.},
-  title = {{Google Landmarks Dataset v2 - A Large-Scale Benchmark for Instance-Level Recognition and Retrieval}},
-  year = {2020},
-  booktitle = {Proc. CVPR},
-}
-```
