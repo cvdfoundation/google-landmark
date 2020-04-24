@@ -49,6 +49,11 @@ There are 4,132,914 images in the `train` set.
     string, `url` is a string, `landmark_id` is an integer. Available at:
     [`https://s3.amazonaws.com/google-landmark/metadata/train.csv`](https://s3.amazonaws.com/google-landmark/metadata/train.csv).
 
+-   `train_clean.csv`: CSV with landmark_id,images fields. `landmark_id` is an
+    integer, `images` is a space-separated list of string train image IDs.
+    Available at:
+    [`https://s3.amazonaws.com/google-landmark/metadata/train_clean.csv`](https://s3.amazonaws.com/google-landmark/metadata/train_clean.csv).
+
 -   `train_attribution.csv`: CSV with id,url,author,license,title fields. `id`
     is a 16-character string, and the other fields are strings of variable
     length. Available at:
