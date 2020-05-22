@@ -7,8 +7,8 @@ experiments. This version of the dataset contains approximately 5 million
 images, split into 3 sets of images: `train`, `index` and `test`. The dataset
 was presented in our [CVPR'20 paper](https://arxiv.org/abs/2004.01804) and
 [Google AI blog post](https://ai.googleblog.com/2019/05/announcing-google-landmarks-v2-improved.html).
-In this repository, we present download links for all dataset files and relevant
-code for metric computation.
+In this repository, we present download links for all dataset files, baseline
+models and code for metric computation.
 
 This dataset was associated to two Kaggle challenges, on
 [landmark recognition](https://kaggle.com/c/landmark-recognition-2019) and
@@ -26,6 +26,8 @@ to as Google Landmarks dataset v1, GLDv1) is available
 NOT plan to maintain GLDv1, so we STRONGLY encourage you to use mainly GLDv2.
 
 If you make use of this dataset, please consider citing the following paper:
+
+[![Paper](http://img.shields.io/badge/paper-arXiv.2004.01804-B3181B.svg)](https://arxiv.org/abs/2004.01804)
 
 ```
 "Google Landmarks Dataset v2 - A Large-Scale Benchmark for Instance-Level Recognition and Retrieval"
@@ -225,6 +227,12 @@ a directory `${a}`/`${b}`/`${c}`/`${id}`.jpg, where `${a}`, `${b}` and `${c}`
 are the first three letters of the image id, and `${id}` is the image id found
 in the csv files. For example, an image with the id `0123456789abcdef` would be
 stored in `0/1/2/0123456789abcdef.jpg`.
+
+## Baseline models
+
+We make available the ResNet101-ArcFace baseline model from the paper, see
+instructions
+[here](https://github.com/tensorflow/models/tree/master/research/delf/delf/python/google_landmarks_dataset).
 
 ## Metric computation code
 
