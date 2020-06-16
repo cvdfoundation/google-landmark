@@ -1,5 +1,8 @@
 # Google Landmarks Dataset v2
 
+**NEW**: Explore the dataset visually
+[here](https://storage.googleapis.com/gld-v2/web/index.html).
+
 This is the second version of the Google Landmarks dataset (GLDv2), which
 contains images annotated with labels representing human-made and natural
 landmarks. The dataset can be used for landmark recognition and retrieval
@@ -34,6 +37,11 @@ If you make use of this dataset, please consider citing the following paper:
 T. Weyand*, A. Araujo*, B. Cao, J. Sim
 Proc. CVPR'20
 ```
+
+## Dataset webpage
+
+Explore the dataset visually
+[here](https://storage.googleapis.com/gld-v2/web/index.html).
 
 ## Current version
 
