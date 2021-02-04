@@ -35,7 +35,7 @@ download_check_and_extract() {
   echo "Downloading $images_file_name and its md5sum..."
   curl -Os $images_tar_url > /dev/null
   curl -Os $images_md5_url > /dev/null
-  if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  if [[ "$OSTYPE" == "linux-gnu" || "$OSTYPE" == "linux" ]]; then
     images_md5="$(md5sum "$images_file_name")"
   elif [[ "$OSTYPE" == "darwin"* ]]; then
     images_md5="$(md5 -r "$images_file_name")"
