@@ -240,7 +240,7 @@ stored in `0/1/2/0123456789abcdef.jpg`.
 
 We make available the ResNet101-ArcFace baseline model from the paper, see
 instructions
-[here](https://github.com/tensorflow/models/tree/master/research/delf/delf/python/google_landmarks_dataset).
+[here](https://github.com/tensorflow/models/tree/master/research/delf/delf/python/datasets/google_landmarks_dataset).
 
 ## Metric computation code
 
