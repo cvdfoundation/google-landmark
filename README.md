@@ -10,7 +10,9 @@ experiments. This version of the dataset contains approximately 5 million
 images, split into 3 sets of images: `train`, `index` and `test`. The dataset
 was presented in our [CVPR'20 paper](https://arxiv.org/abs/2004.01804) and
 [Google AI blog post](https://ai.googleblog.com/2019/05/announcing-google-landmarks-v2-improved.html).
-In this repository, we present download links for all dataset files, baseline
+A hierarchical extension of the dataset is presented in an under-submission
+paper to the IEEE Transactions on Pattern Analysis and Machine Intelligence. In
+this repository, we present download links for all dataset files, baseline
 models and code for metric computation.
 
 This dataset was associated to two Kaggle challenges, on
@@ -24,18 +26,27 @@ webpages for more details on the data, tasks and technical solutions from top
 teams.
 
 As a reference, the previous version of the Google Landmarks dataset (referred
-to as Google Landmarks dataset v1, GLDv1) is available
-[here](https://www.kaggle.com/google/google-landmarks-dataset). Note that we do
-NOT plan to maintain GLDv1, so we STRONGLY encourage you to use mainly GLDv2.
+to as Google Landmarks dataset v1, GLDv1) was available
+[here](https://www.kaggle.com/google/google-landmarks-dataset). It is no longer
+available.
 
-If you make use of this dataset, please consider citing the following paper:
+If you make use of this dataset, please consider citing the following papers:
 
+Original GLDv2 CVPR'20 paper:
 [![Paper](http://img.shields.io/badge/paper-arXiv.2004.01804-B3181B.svg)](https://arxiv.org/abs/2004.01804)
 
 ```
 "Google Landmarks Dataset v2 - A Large-Scale Benchmark for Instance-Level Recognition and Retrieval"
 T. Weyand*, A. Araujo*, B. Cao, J. Sim
 Proc. CVPR'20
+```
+
+For the hierarchical labels:
+
+```
+"Optimization of Rank Losses for Image Retrieval"
+E. Ramzi, N. Audebert, C. Rambour, A. Araujo, X. Bitot, N. Thome
+In submission to: IEEE Transactions on Pattern Analysis and Machine Intelligence.
 ```
 
 ## Dataset webpage
@@ -75,6 +86,15 @@ There are 4,132,914 images in the `train` set.
     `landmark_id` is an integer, `category` is a Wikimedia URL referring to the
     class definition. Available at:
     [`https://s3.amazonaws.com/google-landmark/metadata/train_label_to_category.csv`](https://s3.amazonaws.com/google-landmark/metadata/train_label_to_category.csv).
+
+-   `train_label_to_hierarchical.csv`: CSV with
+    landmark_id,category,supercategory,hierarchical_label,natural_or_human_made
+    fields: `landmark_id` is an integer, `category` is a Wikimedia URL referring
+    to the class definition, `supercategory` is a string referring to the type
+    of landmark mined from Wikimedia, `hierarchical_label` is a string
+    corresponding to the hierarchical label, `natural_or_human_made` indicates
+    whether the landmark is natural of human-made. Available at:
+    [`https://s3.amazonaws.com/google-landmark/metadata/train_label_to_hierarchical.csv`](https://s3.amazonaws.com/google-landmark/metadata/train_label_to_hierarchical.csv).
 
 ### Downloading the data
 
@@ -127,6 +147,15 @@ from the ones in the train set above.
     `landmark_id` is an integer, `category` is a Wikimedia URL referring to the
     class definition. Available at:
     [`https://s3.amazonaws.com/google-landmark/metadata/index_label_to_category.csv`](https://s3.amazonaws.com/google-landmark/metadata/index_label_to_category.csv).
+
+-   `index_label_to_hierarchical.csv`: CSV with
+    landmark_id,category,supercategory,hierarchical_label,natural_or_human_made
+    fields: `landmark_id` is an integer, `category` is a Wikimedia URL referring
+    to the class definition, `supercategory` is a string referring to the type
+    of landmark mined from Wikimedia, `hierarchical_label` is a string
+    corresponding to the hierarchical label, `natural_or_human_made` indicates
+    whether the landmark is natural of human-made. Available at:
+    [`https://s3.amazonaws.com/google-landmark/metadata/index_label_to_hierarchical.csv`](https://s3.amazonaws.com/google-landmark/metadata/index_label_to_hierarchical.csv).
 
 ### Downloading the data
 
@@ -261,6 +290,11 @@ you should verify the license for each image yourself.
 
 ## Release history
 
+### May 2023 (version 2.1)
+
+As an addition to the original dataset, we added hierarchical labels for
+landmarks.
+
 ### Sept 2019 (version 2.1)
 
 Ground-truth and labelmaps released. Note that the ground-truth has been
@@ -314,7 +348,9 @@ For any questions/suggestions/comments/corrections, please open an issue in this
 github repository, and tag @andrefaraujo. In particular, we plan to maintain and
 release new versions of the ground-truth as corrections are found.
 
-## Paper reference
+## Paper references
+
+Original GLDv2 paper:
 
 ```
 @inproceedings{weyand2020GLDv2,
@@ -322,6 +358,17 @@ release new versions of the ground-truth as corrections are found.
   title = {{Google Landmarks Dataset v2 - A Large-Scale Benchmark for Instance-Level Recognition and Retrieval}},
   year = {2020},
   booktitle = {Proc. CVPR},
+}
+```
+
+Hierarchical extension:
+
+```
+@inproceedings{ramzi2023optimization,
+  author = {Ramzi, E. and Audebert, N. and Rambour, C. and Araujo, A. and Bitot, X. and Thome, N.},
+  title = {{Optimization of Rank Losses for Image Retrieval}},
+  year = {2023},
+  booktitle = {In submission to: IEEE Transactions on Pattern Analysis and Machine Intelligence},
 }
 ```
 
