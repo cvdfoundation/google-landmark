@@ -92,8 +92,8 @@ There are 4,132,914 images in the `train` set.
     fields: `landmark_id` is an integer, `category` is a Wikimedia URL referring
     to the class definition, `supercategory` is a string referring to the type
     of landmark mined from Wikimedia, `hierarchical_label` is a string
-    corresponding to the hierarchical label, `natural_or_human_made` indicates
-    whether the landmark is natural of human-made. Available at:
+    corresponding to the hierarchical label, `natural_or_human_made` is a string
+    indicating whether the landmark is natural of human-made. Available at:
     [`https://s3.amazonaws.com/google-landmark/metadata/train_label_to_hierarchical.csv`](https://s3.amazonaws.com/google-landmark/metadata/train_label_to_hierarchical.csv).
 
 ### Downloading the data
@@ -153,8 +153,8 @@ from the ones in the train set above.
     fields: `landmark_id` is an integer, `category` is a Wikimedia URL referring
     to the class definition, `supercategory` is a string referring to the type
     of landmark mined from Wikimedia, `hierarchical_label` is a string
-    corresponding to the hierarchical label, `natural_or_human_made` indicates
-    whether the landmark is natural of human-made. Available at:
+    corresponding to the hierarchical label, `natural_or_human_made` is a string
+    indicating whether the landmark is natural of human-made. Available at:
     [`https://s3.amazonaws.com/google-landmark/metadata/index_label_to_hierarchical.csv`](https://s3.amazonaws.com/google-landmark/metadata/index_label_to_hierarchical.csv).
 
 ### Downloading the data
