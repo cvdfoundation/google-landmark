@@ -274,7 +274,7 @@ instructions
 ## Metric computation code
 
 The metric computation scripts have been made available, via the
-[DELF github repository](https://github.com/tensorflow/models/tree/master/research/delf/delf/python/google_landmarks_dataset),
+[DELF GitHub repository](https://github.com/tensorflow/models/tree/master/research/delf/delf/python/google_landmarks_dataset),
 see the python scripts `compute_recognition_metrics.py` and
 `compute_retrieval_metrics.py`. These scripts accept as input the ground-truth
 files, along with predictions in the format submitted to Kaggle.
@@ -345,7 +345,7 @@ Initial version, including only `train` set.
 ## Contact
 
 For any questions/suggestions/comments/corrections, please open an issue in this
-github repository, and tag @andrefaraujo. In particular, we plan to maintain and
+GitHub repository, and tag @andrefaraujo. In particular, we plan to maintain and
 release new versions of the ground-truth as corrections are found.
 
 ## Paper references
